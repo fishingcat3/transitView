@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="47.625mm"
+   height="47.625mm"
+   viewBox="0 0 47.625 47.625"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.3.2 (091e20e, 2023-11-25)"
+   sodipodi:docname="nsw-school-buses.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="2.122485"
+     inkscape:cx="115.66631"
+     inkscape:cy="184.21803"
+     inkscape:window-width="2048"
+     inkscape:window-height="1253"
+     inkscape:window-x="0"
+     inkscape:window-y="73"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1">
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath9-1">
+      <path
+         d="M 0,0 H 841.89 V 1190.55 H 0 Z"
+         transform="translate(-51.517001,-1024.7339)"
+         id="path9-2" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath11-6">
+      <path
+         d="M 0,0 H 841.89 V 1190.55 H 0 Z"
+         transform="translate(-51.517001,-1056.1565)"
+         id="path11-9" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath13-1">
+      <path
+         d="M 0,0 H 841.89 V 1190.55 H 0 Z"
+         transform="translate(-45.641801,-1031.7094)"
+         id="path13-9" />
+    </clipPath>
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       id="g104-6"
+       inkscape:label="B"
+       transform="matrix(4.7624999,0,0,4.7624999,-190.5,-476.24999)">
+      <path
+         id="path8-1"
+         d="m 0,0 c -9.049,0 -16.411,7.362 -16.411,16.411 0,9.049 7.362,16.411 16.411,16.411 9.049,0 16.411,-7.362 16.411,-16.411 C 16.411,7.362 9.049,0 0,0"
+         style="fill:#8cd4f5;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         transform="matrix(0.2807254,0,0,-0.2807254,45,109.60715)"
+         clip-path="url(#clipPath9-1)" />
+      <path
+         id="path10-7"
+         d="m 0,0 c 8.277,0 15.012,-6.734 15.012,-15.012 0,-8.277 -6.735,-15.011 -15.012,-15.011 -8.277,0 -15.012,6.734 -15.012,15.011 C -15.012,-6.734 -8.277,0 0,0 m 0,2.8 c -9.821,0 -17.811,-7.99 -17.811,-17.812 0,-9.821 7.99,-17.81 17.811,-17.81 9.821,0 17.811,7.989 17.811,17.81 C 17.811,-5.19 9.821,2.8 0,2.8"
+         style="fill:#14b6eb;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         transform="matrix(0.2807254,0,0,-0.2807254,45,100.78603)"
+         clip-path="url(#clipPath11-6)" />
+      <path
+         id="path12-3"
+         d="m 0,0 v 18.438 h 6.927 c 3.578,0 5.542,-1.838 5.542,-4.558 v -0.404 c 0,-1.864 -1.007,-3.3 -2.62,-3.879 1.89,-0.352 3.174,-1.939 3.174,-4.181 V 5.088 C 13.023,2.116 10.807,0 6.902,0 Z m 8.917,13.275 c 0,1.637 -1.133,2.091 -3.123,2.091 H 3.628 V 10.907 H 6.02 c 2.091,0 2.897,0.856 2.897,2.091 z M 5.995,3.199 c 2.318,0 3.401,0.554 3.401,2.418 C 9.371,7.405 8.262,8.01 6.474,8.01 H 3.628 V 3.199 Z"
+         style="fill:#14b6eb;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         transform="matrix(0.2807254,0,0,-0.2807254,43.350683,107.64896)"
+         clip-path="url(#clipPath13-1)" />
+    </g>
+  </g>
+</svg>

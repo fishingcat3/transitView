@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>routes | transitView</title>
+        <link rel="icon" type="image/svg+xml" sizes="any" href="../icons/192-t.png">
+        <meta name="description" content="transitView Transport App" />
+        <meta name="author" content="Ethan He" />
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="../css/base.css" type="text/css"/>
+        <link rel="stylesheet" href="../css/app.css" type="text/css"/>
+        
+        <link rel="manifest" href="/manifest.json">
+    </head>
+    <body class="height-100vh">
+
+        <div class="overlay"></div>
+
+        <noscript>JavaScript must be enabled</noscript>
+
+        <!--top bar-->
+        <header class="nav-bar" id="nav-bar" aria-label="Navigation bar"></header>
+
+        <!--content-->
+        <main class="display-flex flex-row flex-1" aria-label="Routes">
+            <div class="flex-1"></div>
+            <div class="display-flex flex-column flex-2 gap-6px" style="min-width:240px; padding-top:24px;">
+                <span class="text-bold padding-top-12px padding-right-12px padding-bottom-8px text-36px text-primary">Routes</span>
+                <div id="routes-content">
+                    <aside id="vehicle-type-buttons" role="navigation" aria-label="Vehicle type selection">Loading...</aside>
+                    <article id="routes-list-content" aria-label="Routes list">Loading...</article>
+                    </div>
+            </div>
+            <div class="flex-1"></div>
+        </main>
+
+        <footer id="footer"></footer>
+
+        <!--scripts-->
+        <script type="module" src="../js/routes.js"></script>
+    </body>
+</html>

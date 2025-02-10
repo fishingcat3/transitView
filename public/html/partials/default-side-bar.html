@@ -1,0 +1,52 @@
+<div class="side-sub-bar flex-0 gap-4px">
+    <div class="display-flex flex-row gap-6px margin-top-6px margin-bottom-6px align-items">
+        <div class="display-flex flex-1 gap-4px justify-flex-start" id="vehicle-toggle-box"></div>
+        <div class="display-flex flex-0 justify-flex-end contrast-border"><span class="text-display-box">NSW</span></div>
+    </div>
+    <span class="text-primary text-20px"><span>Last updated: </span><span class="text-medium pre-wrap" id="last-updated">unknown</span></span>
+
+    <hr>
+
+    <div class="display-flex flex-row text-24px text-medium">
+        <div class="display-flex flex-1 justify-flex-start text-primary"><span>Options</span></div>
+    </div>
+
+    <div class="display-flex flex-column flex-0 gap-8px">
+
+        <div class="display-flex flex-row text-primary">
+            <div class="display-flex justify-flex-start flex-1">
+                <span class="text-primary text-18px pre-wrap">Display stop within view</span>
+            </div>
+            <div class="display-flex justify-flex-end flex-0">
+                <div class="checkbox" id="checkbox-display_station_icons" role="checkbox"></div>
+            </div>
+        </div>
+
+        <div class="display-flex flex-row text-primary">
+            <div class="display-flex justify-flex-start flex-1">
+                <span class="text-primary text-18px">Display route shapes</span>
+            </div>
+            <div class="display-flex justify-flex-end flex-0">
+                <div class="checkbox" id="checkbox-display_route_shapes" role="checkbox"></div>
+            </div>
+        </div>
+
+        <div class="display-flex flex-row text-primary">
+            <div class="display-flex justify-flex-start flex-1">
+                <span class="text-primary text-18px pre-wrap">Display unscheduled trains</span>
+            </div>
+            <div class="display-flex justify-flex-end flex-0">
+                <div class="checkbox" id="checkbox-display_unscheduled_vehicles" role="checkbox"></div>
+            </div>
+        </div>
+
+        <span class="text-primary text-18px pre-wrap">Dropdown filters are applied with OR logic
+Multiple vehicle types cannot be filtered at once</span>
+
+        <div class="dropdown-wrapper flex-1" id="dropdown-wrapper-specialattributes"></div>
+
+        <div class="dropdown-wrapper flex-1" id="dropdown-wrapper-vehicletype"></div>
+
+    </div>
+
+</div>

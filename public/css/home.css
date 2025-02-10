@@ -1,0 +1,121 @@
+html {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    display:flex;
+    flex-direction:column;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: var(--font);
+    font-weight: 400;
+    font-style: normal;
+    font-size: 16px;
+    line-height: 1.5;
+    background-color: var(--background-primary);
+    cursor: default;
+    user-select: none;
+    font-family: "Inter", serif;
+    font-optical-sizing: auto;
+    overscroll-behavior: none;
+    overflow: auto;
+}
+
+footer {
+    margin-top: 60px;
+    position: relative;
+    bottom: 0;
+}
+
+.center-text {
+    font-weight: 600;
+    font-size: 48px;
+    text-align: center;
+    white-space: pre-line;
+    color: var(--text-primary);
+}
+
+.background-image-container {
+    position: relative;
+    top: 30px;
+    left: 50%;
+    height: auto;
+    width: auto;
+    max-height: calc(100vh - 135px);
+    max-width: calc(100vw - 60px);
+    z-index: 10;
+    transform: translateX(-50%);
+}
+
+.background-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 30px;
+    filter: brightness(var(--image-filter3));
+}
+
+.background-image-overlay {
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background: var(--background-tint-3);
+    z-index: 20;
+}
+
+.background-image-overlay2 {
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    padding: 20px;
+    border-radius: 20px;
+    background: var(--background-secondary-transparent);
+    top: 1000px;
+    z-index: 30;
+    width: calc(100vw - 160px);
+    gap: 15px;
+}
+
+.button {
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    cursor: pointer;
+    flex:0;
+    text-align:center;
+    text-decoration:none;
+    transition-property:background-color,color,border-color,opacity;
+    transition-duration:0.2s;
+    color:var(--white);
+    background-color:var(--teal);
+    pointer-events: auto;
+
+    border-radius:8px;
+    padding:8px 24px 8px 24px;
+    font-size:28px;
+
+    &:hover {
+        background-color:var(--teal-hover);
+    }
+}
+
+@media only screen
+    and (max-width: 768px){
+        .center-text {
+            font-size: 30px;
+        }
+        .button {
+            border-radius:6px;
+            padding:6px 16px 6px 16px;
+            font-size:20px;
+        }
+}

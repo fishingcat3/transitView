@@ -1,0 +1,53 @@
+<link rel="stylesheet" href="../css/nav-bar.css" type="text/css"/>
+<link rel="stylesheet" href="../css/responsive.css" type="text/css"/>
+
+<div class="nav-left" role="navigation" aria-label="Home button">
+    <a class="display-flex flex-row align-center gap-12px text-decoration-none" href="/">
+        <img src="../icons/192-t.png" height="40px" width="40px" arialabelledby="nav-bar-title" alt="logo">
+        <span class="text-28px text-primary text-bold text-italic _768px-hide" id="nav-bar-title">transitView</span>
+    </a>
+</div>
+    
+<div class="nav-middle" role="navigation" aria-label="Navigation buttons">
+    <div id="nav-bar-list"></div>
+</div>
+
+<div class="nav-right _992px-hide" role="timer" aria-label="Current time">
+    <time class="clock text-24px transition-color transition-duration-200" id="time">00:00:00</time>
+</div>
+
+<script>
+    const navbarButtons = [
+    { id: "realtimemap-button", name: "Real-time Map", iconRef: "../icons/map-icon.png", ref: "/map" },
+    { id: "routes-button", name: "Routes", iconRef: "../icons/routes-icon.png", ref: "/routes" },
+    { id: "settings-button", name: "Settings", iconRef: "../icons/settings-icon.png", ref: "/settings" },
+    ];
+
+    const navbarList = document.getElementById("nav-bar-list");
+
+    navbarButtons.forEach((button) => {
+        const a = document.createElement("a");
+        const img = document.createElement("img");
+        const span = document.createElement("span");
+
+        a.className = "nav-bar-button contrast-border";
+        a.href = button.ref;
+        a.id = button.id;
+        a.setAttribute("aria-labelledby", `nav-bar-button-${button.name.toLowerCase()}`);
+
+        img.className = "nav-button-icon _1200px-show image-invert";
+        img.src = button.iconRef;
+        img.setAttribute("height", "26");
+        img.setAttribute("width", "26");
+        img.setAttribute("aria-labelledby", `nav-bar-button-${button.name.toLowerCase()}`);
+
+        span.className = "nav-button-text _1200px-hide";
+        span.id = `nav-bar-button-${button.name.toLowerCase()}`;
+        span.innerHTML = button.name;
+
+        a.appendChild(img);
+        a.appendChild(span);
+        navbarList.appendChild(a);
+    });
+</script>
+

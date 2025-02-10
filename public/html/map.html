@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>map | transitView</title>
+        <link rel="icon" type="image/svg+xml" sizes="any" href="../icons/192-t.png">
+        <meta name="description" content="transitView Transport App" />
+        <meta name="author" content="Ethan He" />
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="stylesheet" href="../css/base.css" type="text/css"/>
+        <link rel="stylesheet" href="../css/app.css" type="text/css"/>
+        <link rel="stylesheet" href="../css/vehicles.css" type="text/css"/>
+        <link rel="stylesheet" href="../css/tooltips.css" type="text/css"/>
+        <link rel="stylesheet" href="../js/leaflet/leaflet.css" type="text/css"/>
+        <link rel="preconnect" href="https://cartocdn.com">
+
+        <link rel="manifest" href="/manifest.json">
+    </head>
+    <body>
+        <noscript>JavaScript must be enabled</noscript>
+
+        <!--top bar-->
+        <header class="nav-bar" id="nav-bar" aria-label="Navigation bar"></header>
+
+        <!--content-->
+        <main class="display-flex flex-1 map-content" aria-label="Map and side bar">
+            <aside class="side-bar" id="side-bar" aria-label="Information side bar"></aside>
+            <div class="side-bar-adjuster contrast-border" id="side-bar-adjuster"></div>
+            <div id="map" aria-label="Map container"></div>
+            <div id="hover-tooltip" class="contrast-border"></div>
+        </main>
+
+        <!--scripts-->
+        <script type="module" src="../js/map.js"></script>
+
+        <script src="../js/leaflet/leaflet.js"></script>
+        <script src="../js/leaflet/Leaflet.Marker.SlideTo.js"></script>
+        <script src="../js/leaflet/leaflet.polylineoffset.js"></script>
+    </body>
+</html>

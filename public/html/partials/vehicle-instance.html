@@ -1,0 +1,40 @@
+<div class="side-sub-bar gap-6px" style="flex-direction: row !important; justify-content: space-between;">
+    <div class="text-display-box justify-flex-start flex-1" id="back-side-bar" role="button">
+        <img class="image-invert" style="transform: rotate(90deg);" src="../../icons/dropdown-icon.png" height="20px" width="20px" aria-labelledby="back-text">
+        <span id="back-text">Back</span>
+    </div>
+    <div class="text-display-box justify-flex-end flex-1" id="close-side-bar" role="button">
+        <img class="image-invert" src="../../icons/cross-icon.png" height="24px" width="24px" aria-labelledby="close-text">
+        <span id="close-text">Close</span>
+    </div>
+</div>
+
+<hr>
+
+<article class="side-sub-bar justify-flex-start text-primary" aria-label="Route short name and headsign">
+
+    <div class="display-flex flex-row align-center gap-4px">
+        <div class="display-flex justify-center align-center text-18px padding-4px border-6px" 
+        style="min-width: 37px; min-height: 24px; background-color:var(--background-secondary);" 
+        id="vehicle-instance-shortname">?</div>
+        <div class="text-20px padding-4px" id="vehicle-instance-title">Loading...</div>
+    </div>
+
+</article>
+
+<span aria-label="Position last updated" role="timer"><span class="text-primary text-20px"><span>Position last updated: </span><span class="text-medium pre-wrap" id="last-updated">unknown</span></span></span>
+
+<hr>
+
+<div class="side-sub-bar justify-flex-start gap-8px" id="vehicle-instance-content">
+    <article class="side-bar-content" aria-labelledby="triproutevehicle-information-title">
+        <div class="text-primary text-bold text-18px table-title" id="triproutevehicle-information-title">Trip, Route & Vehicle Information</div>
+        <table id="vehicle-information-table"></table>
+    </article>
+    <article class="side-bar-content" aria-labelledby="stoppingpattern-information">
+        <div class="text-primary text-bold text-18px table-title" id="stoppingpattern-information">Stopping Pattern Information</div>
+        <table id="stopping-information-table"></table>
+    </article>
+</div>
+
+<div class="flex-1"></div>

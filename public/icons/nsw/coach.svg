@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="47.625mm"
+   height="47.625mm"
+   viewBox="0 0 47.625 47.625"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.3.2 (091e20e, 2023-11-25)"
+   sodipodi:docname="nsw-coaches.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="2.5841402"
+     inkscape:cx="89.584924"
+     inkscape:cy="119.18858"
+     inkscape:window-width="2048"
+     inkscape:window-height="1253"
+     inkscape:window-x="0"
+     inkscape:window-y="73"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1">
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3408">
+      <path
+         d="m 516.599,577.706 c -11.293,-1.964 -20.202,-10.872 -22.17,-22.164 v 0 -9.43 c 1.968,-11.293 10.877,-20.201 22.17,-22.165 v 0 h 9.419 c 11.296,1.964 20.206,10.874 22.17,22.17 v 0 9.42 c -1.964,11.295 -10.874,20.205 -22.17,22.169 v 0 z"
+         transform="translate(-521.30791,-526.36981)"
+         id="path3408" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3410">
+      <path
+         d="m 516.599,577.706 c -11.293,-1.964 -20.202,-10.872 -22.17,-22.164 v 0 -9.43 c 1.968,-11.293 10.877,-20.201 22.17,-22.165 v 0 h 9.419 c 11.296,1.964 20.206,10.874 22.17,22.17 v 0 9.42 c -1.964,11.295 -10.874,20.205 -22.17,22.169 v 0 z"
+         transform="translate(-530.24761,-544.42161)"
+         id="path3410" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3412">
+      <path
+         d="m 516.599,577.706 c -11.293,-1.964 -20.202,-10.872 -22.17,-22.164 v 0 -9.43 c 1.968,-11.293 10.877,-20.201 22.17,-22.165 v 0 h 9.419 c 11.296,1.964 20.206,10.874 22.17,22.17 v 0 9.42 c -1.964,11.295 -10.874,20.205 -22.17,22.169 v 0 z"
+         transform="translate(-521.30861,-577.70621)"
+         id="path3412" />
+    </clipPath>
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       id="g107"
+       inkscape:label="C"
+       transform="matrix(4.7625031,0,0,4.7625031,-571.50042,-476.25032)">
+      <path
+         id="path3407"
+         d="m 0,0 c -13.485,0 -24.452,10.973 -24.452,24.457 0,13.484 10.967,24.457 24.452,24.457 13.487,0 24.454,-10.973 24.454,-24.457 C 24.454,10.973 13.487,0 0,0"
+         style="fill:#742283 icc-color(sRGB-IEC61966-2, 0.1, 0.45399475, 0.13299561, 0.51199341);fill-opacity:1;fill-rule:nonzero;stroke:none"
+         transform="matrix(0.18601736,0,0,-0.18601736,124.99984,109.54943)"
+         clip-path="url(#clipPath3408)" />
+      <path
+         id="path3409"
+         d="M 0,0 C 0.62,-0.219 0.509,-0.693 0.291,-1.382 -0.545,-3.93 -3.347,-7.35 -8.551,-7.35 c -6.623,0 -9.86,3.42 -9.86,9.498 v 8.261 c 0,5.639 3.165,9.751 9.932,9.751 5.569,0 8.079,-3.02 8.953,-6.331 C 0.62,13.284 0.509,12.847 0,12.665 l -3.093,-0.948 c -0.618,-0.181 -0.981,0.037 -1.128,0.619 -0.509,1.93 -1.709,3.237 -4.33,3.237 -3.056,0 -4.621,-2.215 -4.621,-5.675 v -7.06 c 0,-3.457 1.637,-5.568 4.658,-5.568 2.584,0 3.749,1.422 4.293,3.386 0.147,0.544 0.619,0.763 1.165,0.581 z"
+         style="fill:#ffffff icc-color(sRGB-IEC61966-2, 0.1, 1, 1, 1);fill-opacity:1;fill-rule:nonzero;stroke:none"
+         transform="matrix(0.18601736,0,0,-0.18601736,126.66278,106.19148)"
+         clip-path="url(#clipPath3410)" />
+      <path
+         id="path3411"
+         d="m 0,0 c -14.821,0 -26.879,-12.058 -26.879,-26.88 0,-14.821 12.058,-26.879 26.879,-26.879 14.821,0 26.88,12.058 26.88,26.879 C 26.88,-12.058 14.821,0 0,0 m 0,-4.225 c 12.491,0 22.655,-10.163 22.655,-22.655 0,-12.492 -10.164,-22.654 -22.655,-22.654 -12.492,0 -22.654,10.162 -22.654,22.654 0,12.492 10.162,22.655 22.654,22.655"
+         style="fill:#ffffff icc-color(sRGB-IEC61966-2, 0.1, 1, 1, 1);fill-opacity:1;fill-rule:nonzero;stroke:none"
+         transform="matrix(0.18601736,0,0,-0.18601736,124.99997,99.999964)"
+         clip-path="url(#clipPath3412)"
+         inkscape:label="path3411" />
+    </g>
+  </g>
+</svg>

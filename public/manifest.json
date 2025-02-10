@@ -1,0 +1,25 @@
+{
+  "name": "transitView",
+  "short_name": "transitView",
+  "description": "View live & real-time position data and information on trains, buses, light rails and ferrys in New South Wales as well as lists of routes and other information",
+  "start_url": "/map",
+  "id": "/map",
+  "display": "standalone",
+  "background_color": "#FFFFFF",
+  "theme_color": "#42BD9AFF",
+  "scope": "/",
+  "icons": [
+    {
+      "src": "../icons/192.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "any"
+    },
+    {
+      "src": "../icons/512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any"
+    }
+  ]
+}

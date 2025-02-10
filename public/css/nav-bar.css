@@ -1,0 +1,103 @@
+.nav-bar {
+    position:relative;
+    top:0;
+    display:flex;
+    padding-left:24px;
+    padding-right:24px;
+    padding-top:12px;
+    padding-bottom:12px;
+    min-height:50px;
+    z-index:1000;
+    background-color:var(--background-secondary);
+    border-bottom:1px solid var(--text-tertiary);
+}
+
+.nav-left {
+    display:flex;
+    flex:0.5;
+    justify-content:flex-start;
+    margin-right:24px;
+}
+
+.nav-middle, .nav-middle-no-hide {
+    display:flex;
+    flex-direction:row;
+    flex:1.5;
+    align-items:center;
+    justify-content:center;
+}
+
+.nav-right {
+    display:flex;
+    flex-direction:row;
+    flex:0.5;
+    align-items:center;
+    justify-content:flex-end;
+}
+
+#nav-bar-list {
+    flex:1;
+    display:flex;
+    flex-direction:row;
+    gap:12px;
+}
+
+.nav-bar-button {
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    flex:1;
+    text-align:center;
+    border-radius:8px;
+    padding-left:16px;
+    padding-right:16px;
+    padding-top:8px;
+    padding-bottom:8px;
+    font-size:20px;
+    color:var(--text-primary);
+    background-color:var(--background-primary);
+    transition-property:background-color;
+    transition-duration:0.2s;
+    text-decoration:none;
+
+    &:hover {
+        background-color:var(--background-tint-1);
+    }
+}
+
+.nav-button-icon {
+    display:block;
+}
+
+.nav-bar-toggle {
+    display:none;
+}
+
+@media only screen
+    and (max-width: 768px){
+        .nav-left {
+            flex: 0;
+        }
+
+        .nav-middle {
+            justify-content:end;
+        }
+
+        .nav-bar-toggle {
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            border-radius:8px;
+            padding-left:10px;
+            padding-right:10px;
+            padding-top:8px;
+            padding-bottom:8px;
+            background-color:var(--background-primary);
+            transition-property:background-color,color,border-color,opacity,visibility;
+            transition-duration:0.2s;
+            &:hover {
+                background-color:var(--background-tint-1);
+            }
+        }
+}

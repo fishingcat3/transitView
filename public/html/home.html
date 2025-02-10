@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>home | transitView</title>
+        <link rel="icon" type="image/svg+xml" sizes="any" href="../icons/192-t.png">
+        <meta name="description" content="transitView Transport App" />
+        <meta name="author" content="Ethan He" />
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="../css/base.css" type="text/css"/>
+        <link rel="stylesheet" href="../css/home.css" type="text/css"/>
+
+        <link rel="manifest" href="/manifest.json">
+    </head>
+    <body class="height-100vh">
+
+        <noscript>JavaScript must be enabled</noscript>
+
+        <!--top bar-->
+        <header class="nav-bar" id="title-bar" aria-label="Navigation bar"></header>
+
+        <!--content-->
+        <main class="display-flex flex-row flex-1" aria-label="Home page">
+            <div class="background-image-container">
+                <img class="background-image" src="../images/thumbnail3.png" alt="Banner - screenshot from website">
+            </div>
+            <div class="background-image-overlay">
+                <div class="background-image-overlay2">
+                    <span class="center-text" style="width: 80%;">Monitor vehicles</span>
+                    <a class="button contrast-border" href="/map">Launch Map</a>
+                    <a class="button contrast-border" href="/routes">Launch Routes List</a>
+                </div>
+            </div>
+            <div class="display-flex flex-1 flex-column justify-center align-center">
+            </div>
+        </main>
+
+        <footer id="footer"></footer>
+
+        <!--scripts-->
+        <script type="module" src="../js/home.js"></script>
+    </body>
+</html>
+
+<!--
+
+<span class="text-bold text-48px padding-12px text-primary text-center">a very cool site</span>
+<a class="button large teal enabled contrast-border" href="/map">Launch App</a>
+
+-->

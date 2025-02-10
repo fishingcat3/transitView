@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>404 | transitView</title>
+        <link rel="icon" type="image/svg+xml" sizes="any" href="../icons/192-t.png">
+        <meta name="description" content="transitView Transport App" />
+        <meta name="author" content="Ethan He" />
+        
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="../css/base.css" type="text/css"/>
+        <link rel="stylesheet" href="../css/app.css" type="text/css"/>
+
+        <link rel="manifest" href="/manifest.json">
+    </head>
+    <body>
+
+        <noscript>JavaScript must be enabled</noscript>
+        
+        <!--top bar-->
+        <header class="nav-bar" id="title-bar" aria-label="Navigation bar"></header>
+
+        <!--content-->
+        <main class="display-flex flex-row flex-1" aria-label="404 page">
+            <div class="display-flex flex-1 flex-column justify-center align-center">
+                <span class="text-bold padding-12px text-center text-primary" style="font-size:128px; line-height:80px;" id="status-code">
+                    404
+                </span>
+                <span class="text-bold padding-12px text-center text-primary" style="line-height:80px;" id="status-name">
+                    Not Found
+                </span>
+                <span class="text-normal padding-12px text-center text-primary" style="font-size:24px; white-space:pre-line;" id="status-description">The requested resource could not be found
+                    It might have been moved to another URL or may not exist
+                </span>
+                <div class="horizontal-line"></div>
+                <a class="button large teal enabled" href="/">Back to Home</a>
+            </div>
+        </main>
+
+        <footer id="footer"></footer>
+
+        <!--scripts-->
+        <script type="module" src="../js/status/404.js"></script>
+    </body>
+</html>
