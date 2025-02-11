@@ -1,4 +1,4 @@
-# transitview
+# transitView
 
 ## setup
 ensure **node.js** is installed\
