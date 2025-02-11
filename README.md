@@ -3,7 +3,7 @@
 ## setup
 
 ensure **node.js** is installed\
-create `.env` and add **PORT** and **NSW1** (TfNSW Open Data API key)\
+create `.env` and add **PORT** and **NSW1** (TfNSW Open Data API key)
 
 run `npm install`\
 run `node server.js`
