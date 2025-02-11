@@ -1,3 +1,10 @@
 .env
-cache
+cache/nsw/data.db
+cache/nsw/data.db-shm
+cache/nsw/data.db-wal
+cache/nsw/last_updated.json
+cache/nsw/route_shape_cache.json
+cache/nsw/last_updated.json
+cache/nsw/vehicles.json
 node_modules
+.DS_Store
