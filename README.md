@@ -10,6 +10,6 @@ run `node server.js`
 
 ## credit
 
-files in `/js/leaflet/` are courtesy of leaflet js, leaflet marker slide to and leaflet polyline offset\
+files in `/js/leaflet/` are courtesy of leaflet js, leaflet marker slide to and leaflet polyline offset
 
 GPL 2.0 license
