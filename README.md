@@ -1,6 +1,6 @@
 # transitView
 
-realtime train, metro, bus, light rail and ferry viewer for NSW
+realtime train, metro, bus, light rail and ferry viewer for NSW\
 ![Thumbnail](https://raw.githubusercontent.com/fishingcat3/transitView/refs/heads/main/public/images/thumbnail3.png)
 
 ## setup
