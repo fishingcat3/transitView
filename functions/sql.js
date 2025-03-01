@@ -1,76 +1,105 @@
-import Database from 'better-sqlite3';
-import csvParser from 'csv-parser';
-import fs from 'fs';
+import Database from "better-sqlite3";
+import csvParser from "csv-parser";
+import fs from "node:fs";
 
-import { tables } from './tables.js';
-import { divider, log, Timer } from './utility.js';
+import { tables } from "./tables.js";
+import { divider, log, Timer } from "./utility.js";
 
-const db = new Database('./cache/nsw/data.db');
-db.pragma('journal_mode = WAL');
+const db = new Database("./cache/nsw/data.db");
+db.pragma("journal_mode = WAL");
 
 log.blueB("DATABASE connection open");
 
 export function createTable(name, columns) {
     let startTable = Date.now();
-    const columnsDefinition = columns.map((col) => col.join(" ")).join(', ');
+    const columnsDefinition = columns.map((col) => col.join(" ")).join(", ");
     db.exec(`CREATE TABLE IF NOT EXISTS ${name} (${columnsDefinition});`);
     db.prepare(`DELETE FROM ${name};`).run();
     log.greenB(`${name} table created ${Date.now() - startTable}ms`);
-};
+}
 
 export function createTables(path, tables) {
-    const createdTables = []
-    if (!path) { return; };
+    const createdTables = [];
+    if (!path) {
+        return;
+    }
     tables.forEach(async ({ name, columns }) => {
-        if (!fs.existsSync(`./cache/nsw/gtfs_${path}/${name}.txt`)) { return; };
+        if (!fs.existsSync(`./cache/nsw/gtfs_${path}/${name}.txt`)) {
+            return;
+        }
         createTable(`${path}_${name}`, columns);
-        createdTables.push(`${path}_${name}`)
+        createdTables.push(`${path}_${name}`);
     });
     return createdTables;
-};
+}
 
 export async function loadCSVIntoTable(filePath, tableName, columns) {
-    if (!fs.existsSync(filePath)) { return; };
-    const insertStatement = db.prepare(`INSERT INTO ${tableName} (${columns.map((col) => `${col[0]}`).join(", ")}) VALUES (${columns.map(() => "?").join(", ")})`);
+    if (!fs.existsSync(filePath)) {
+        return;
+    }
+    const insertStatement = db.prepare(
+        `INSERT INTO ${tableName} (${columns
+            .map((col) => `${col[0]}`)
+            .join(", ")}) VALUES (${columns.map(() => "?").join(", ")})`
+    );
     const rows = [];
     const transaction = db.transaction(() => {
-        rows.forEach((row) => insertStatement.run(...columns.map((col) => row[col[0].trim()])));
+        rows.forEach((row) =>
+            insertStatement.run(...columns.map((col) => row[col[0].trim()]))
+        );
     });
 
     return new Promise((resolve, reject) => {
-        fs.createReadStream(filePath).pipe(csvParser({ mapHeaders: ({ header }) => header.trim() }))
-            .on('data', (row) => {
+        fs.createReadStream(filePath)
+            .pipe(csvParser({ mapHeaders: ({ header }) => header.trim() }))
+            .on("data", (row) => {
                 rows.push(row);
                 if (rows.length >= 500) {
                     transaction();
                     rows.length = 0;
-                };
+                }
             })
-            .on('end', () => {
+            .on("end", () => {
                 if (rows.length > 0) {
                     transaction();
-                };
+                }
                 resolve();
             })
-            .on('error', (error) => {
+            .on("error", (error) => {
                 reject(error);
             });
     });
-};
+}
 
 async function indexTables(path, createdTables) {
     const t3 = new Timer(`INDEX ${path}`).start();
     db.transaction(() => {
         [
-            { table: `${path}_agency`, idx: "idx_agency_id", column: "agency_id" },
-            { table: `${path}_routes`, idx: "idx_route_id", column: "route_id" },
+            {
+                table: `${path}_agency`,
+                idx: "idx_agency_id",
+                column: "agency_id",
+            },
+            {
+                table: `${path}_routes`,
+                idx: "idx_route_id",
+                column: "route_id",
+            },
             { table: `${path}_notes`, idx: "idx_note_id", column: "note_id" },
             { table: `${path}_trips`, idx: "idx_trip_id", column: "trip_id" },
-            { table: `${path}_shapes`, idx: "idx_shape_id", column: "shape_id" },
+            {
+                table: `${path}_shapes`,
+                idx: "idx_shape_id",
+                column: "shape_id",
+            },
         ].forEach((x) => {
-            if (!createdTables.includes(x.table)) { return; };
+            if (!createdTables.includes(x.table)) {
+                return;
+            }
             db.prepare(`DROP INDEX IF EXISTS "${x.idx}";`).run();
-            db.prepare(`CREATE INDEX IF NOT EXISTS "${x.idx}" ON "${x.table}"("${x.column}");`).run();
+            db.prepare(
+                `CREATE INDEX IF NOT EXISTS "${x.idx}" ON "${x.table}"("${x.column}");`
+            ).run();
         });
     })();
 
@@ -78,41 +107,66 @@ async function indexTables(path, createdTables) {
     // console.log(`Indexes on ${path}_routes: ${indexes.map((x) => x.name).join(", ")}`);
 
     t3.end();
-};
+}
 
 let queries = {};
 export function databaseAll(tableName, amount) {
     const query = `SELECT ${amount} FROM ${tableName}`;
-    if (!queries[query]) { queries[query] = db.prepare(query); };
+    if (!queries[query]) {
+        queries[query] = db.prepare(query);
+    }
     return queries[query].all();
-};
+}
 
 export function databaseFind(toFind, column, tableName, amount) {
     const query = `SELECT ${amount} FROM ${tableName} WHERE ${column} = ?;`;
-    if (!queries[query]) { queries[query] = db.prepare(query); };
+    if (!queries[query]) {
+        queries[query] = db.prepare(query);
+    }
     return queries[query].get(toFind);
-};
+}
 
-export function databaseMatchCoords(toFind, column, tableName, amount, minLat, maxLat, minLng, maxLng, latName, lngName) {
+export function databaseMatchCoords(
+    toFind,
+    column,
+    tableName,
+    amount,
+    minLat,
+    maxLat,
+    minLng,
+    maxLng,
+    latName,
+    lngName
+) {
     const query = `SELECT ${amount} FROM ${tableName} WHERE ${column} = ? AND ${latName} BETWEEN ? AND ? AND ${lngName} BETWEEN ? and ?;`;
-    if (!queries[query]) { queries[query] = db.prepare(query); };
+    if (!queries[query]) {
+        queries[query] = db.prepare(query);
+    }
     return queries[query].all(toFind, minLat, maxLat, minLng, maxLng);
-};
+}
 
 export function databaseMatch(toFind, column, tableName, amount) {
     const query = `SELECT ${amount} FROM ${tableName} WHERE ${column} = ?;`;
-    if (!queries[query]) { queries[query] = db.prepare(query); };
+    if (!queries[query]) {
+        queries[query] = db.prepare(query);
+    }
     return queries[query].all(toFind);
-};
+}
 
 export function databaseBatchMatch(toFind, column, tableName, amount) {
-    const query = `SELECT ${amount} FROM ${tableName} WHERE ${column} IN (${toFind.map(() => "?").join(",")});`;
+    const query = `SELECT ${amount} FROM ${tableName} WHERE ${column} IN (${toFind
+        .map(() => "?")
+        .join(",")});`;
     return db.prepare(query).all(toFind);
-};
+}
 
 function fixRouteColors() {
-    const query = db.prepare(`UPDATE buses_routes SET route_color = ? WHERE route_short_name LIKE ?;`);
-    const query2 = db.prepare(`UPDATE buses_routes SET route_text_color = ? WHERE route_short_name LIKE ?;`);
+    const query = db.prepare(
+        `UPDATE buses_routes SET route_color = ? WHERE route_short_name LIKE ?;`
+    );
+    const query2 = db.prepare(
+        `UPDATE buses_routes SET route_text_color = ? WHERE route_short_name LIKE ?;`
+    );
     db.transaction(() => {
         [
             { color: "F79210", match: "%T1" },
@@ -141,13 +195,12 @@ function fixRouteColors() {
             { color: "006199", match: "%BN1" },
         ].forEach((route) => query2.run(...Object.values(route)));
     })();
-};
+}
 
 export async function processTables(path) {
     // console.log(`${(process.memoryUsage().heapTotal / 1073741824).toFixed(3)} GB used`);
     return new Promise(async (resolve, reject) => {
         try {
-
             const t1 = new Timer(`CREATE TABLES ${path}`).start();
             const thisTables = tables(path);
             const createdTables = createTables(path, thisTables);
@@ -156,25 +209,28 @@ export async function processTables(path) {
             const t2 = new Timer(`ALL DB UPDATE ${path}`).start();
             for (const table of thisTables) {
                 const t = new Timer(`LOAD ${path}_${table.name}`).start();
-                await loadCSVIntoTable(table.file, `${path}_${table.name}`, table.columns);
+                await loadCSVIntoTable(
+                    table.file,
+                    `${path}_${table.name}`,
+                    table.columns
+                );
                 t.end();
-            };
+            }
             indexTables(path, createdTables);
             if (path == "buses") {
                 fixRouteColors();
-                db.exec('VACUUM;');
-            };
+                db.exec("VACUUM;");
+            }
             t2.end();
-
         } catch (error) {
             log.redB(`ERROR processing files ${error.message}`);
             reject(error);
-        };
+        }
         resolve();
     });
-};
+}
 
-process.on('exit', () => {
+process.on("exit", () => {
     db.close();
 });
 
