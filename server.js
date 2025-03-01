@@ -3,7 +3,7 @@
 
 import express from "express";
 import compression from "compression";
-import path from "node:ath";
+import path from "node:path";
 import { fileURLToPath } from "node:url";
 import fs from "node:fs";
 import dotenv from "dotenv";
